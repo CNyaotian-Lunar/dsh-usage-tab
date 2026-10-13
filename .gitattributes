@@ -1,0 +1,3 @@
+# Keep line endings exactly as committed: this repo holds hand-written artifacts
+# (lib/client.js) and does file-by-file sha256 comparison; autocrlf would break both.
+* -text

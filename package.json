@@ -1,0 +1,55 @@
+{
+  "name": "dsh-usage-tab",
+  "version": "0.1.0",
+  "description": "DSH web plugin: a 「时间统计」 tab for the conversation view — this session's wall clock, active/idle split, per-turn gantt, hourly distribution and slowest turns, all folded client-side from the existing sessionStats / turnTimings / timeline channels.",
+  "type": "module",
+  "main": "lib/index.mjs",
+  "author": "CNyaotian-Lunar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CNyaotian-Lunar/dsh-usage-tab.git"
+  },
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    },
+    "compatibility": {
+      "dsh": ">=0.1.0",
+      "dshReleases": {
+        "0.2.0-rc.2": "compatible"
+      }
+    }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "usage",
+    "timing",
+    "gantt",
+    "session-stats",
+    "ui"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node test/self-test.mjs"
+  }
+}

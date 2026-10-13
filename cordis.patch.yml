@@ -1,0 +1,15 @@
+# dsh-usage-tab 包层补丁
+#
+# 这是「官方安装方式」的挂载点（本次改动**不执行**，只落盘备好）：
+#   dsh plugin --profile web add dsh-usage-tab      （发布到 npm 之后）
+# `dsh plugin add` 会把本包加进 profile 的 dsh.profile.bundles，profile 启动时
+# 合并本补丁 —— 下面这一行把插件的 Host 半边挂上，浏览器半边由 package.json 的
+# `dsh.client` 声明自动进入浏览器插件图。
+#
+# 注意：bundle 列表是**启动时**读取的，用这条路装完需要重启 `dsh web`。
+# 免重启的等价做法：profile 侧 cordis.patch.yml 里插一行带 !!js 守卫的
+# `- insert:`（照同类插件的安装脚本写法）；两条路互斥，
+# 官方那条一旦存在，手工那条会靠守卫自动让位。
+- insert:
+    - id: usage-tab
+      name: 'dsh-usage-tab'

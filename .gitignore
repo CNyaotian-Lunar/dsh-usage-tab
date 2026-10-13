@@ -1,0 +1,12 @@
+node_modules/
+out/
+logs/
+*.log
+*.bak-*
+
+# 内部文档：不上公网
+HANDOVER.md
+NEXT-SESSION-PROMPT.md
+REVIEW.md
+notes/
+backups/
